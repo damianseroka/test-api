@@ -1,6 +1,6 @@
-Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+# frozen_string_literal: true
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+Rails.application.routes.draw do
+  get '/common_ancestor', to: 'nodes#common_ancestors', defaults: { format: :json }
+  resources :birds, only: :index, defaults: { format: :json }
 end
